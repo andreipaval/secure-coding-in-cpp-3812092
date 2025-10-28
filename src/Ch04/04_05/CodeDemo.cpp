@@ -14,6 +14,10 @@ public:
         buffer = new int[size];
         std::cout << "Allocated " << size * sizeof(int) / 1024 << " KB" << std::endl;
     }
+    ~DataChunk(){
+        delete[] buffer;
+        std::cout << "Deallocated " << size * sizeof(int) / 1024 << " KB" << std::endl;
+    }
 
     void fill(int value){
         for(size_t i = 0; i < size; ++i)
